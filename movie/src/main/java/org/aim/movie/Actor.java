@@ -3,12 +3,17 @@ package org.aim.movie;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "actors")
 public class Actor {
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name= "actor_id")
     private Integer id;
 
