@@ -1,4 +1,4 @@
-package org.aim.movie;
+package org.aim.movie.movie;
 
 import java.sql.Date;
 
@@ -30,12 +30,20 @@ public class Movie {
     }
 
     // Director Id
+    @Column(name = "director_id")
+    private int directorId;
 
     // Genre Id
+    @Column(name = "genre_id")
+    private int genreId;
 
     // Rating Id
+    @Column(name = "rating_id")
+    private int ratingId;
 
     // Actors
+    @Column(name = "actors_name")
+    private String actors;
 
     public void setId(Integer id) {
         this.id = id;
@@ -63,6 +71,38 @@ public class Movie {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public int getDirectorId() {
+        return directorId;
+    }
+
+    public void setDirectorId(int directorId) {
+        this.directorId = directorId;
+    }
+
+    public int getGenreId() {
+        return genreId;
+    }
+
+    public void setGenreId(int genreId) {
+        this.genreId = genreId;
+    }
+
+    public int getRatingId() {
+        return ratingId;
+    }
+
+    public void setRatingId(int ratingId) {
+        this.ratingId = ratingId;
+    }
+
+    public String getActors() {
+        return actors;
+    }
+
+    public void setActors(String actors) {
+        this.actors = actors;
     }
 
     

@@ -1,6 +1,5 @@
-package org.aim.movie;
+package org.aim.movie.actor;
 
-import java.lang.annotation.Repeatable;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;

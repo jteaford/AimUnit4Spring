@@ -1,4 +1,4 @@
-package org.aim.movie;
+package org.aim.movie.movie;
 
 import org.springframework.data.repository.CrudRepository;
 
