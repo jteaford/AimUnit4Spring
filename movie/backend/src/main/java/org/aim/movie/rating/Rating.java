@@ -1,4 +1,4 @@
-package org.rating;
+package org.aim.movie.rating;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

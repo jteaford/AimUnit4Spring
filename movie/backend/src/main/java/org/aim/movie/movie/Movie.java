@@ -16,7 +16,7 @@ import javax.persistence.Table;
 import org.aim.movie.actor.Actor;
 import org.aim.movie.director.Director;
 import org.aim.movie.genre.Genre;
-import org.rating.Rating;
+import org.aim.movie.rating.Rating;
 
 import java.util.List;
 
@@ -104,20 +104,20 @@ public class Movie {
         this.genre = genre;
     }
 
-    public Rating getRating() {
-        return rating;
-    }
-
-    public void setRating(Rating rating) {
-        this.rating = rating;
-    }
-
     public List<Actor> getActors() {
         return actors;
     }
 
     public void setActors(List<Actor> actors) {
         this.actors = actors;
+    }
+
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
     }
     
 }
