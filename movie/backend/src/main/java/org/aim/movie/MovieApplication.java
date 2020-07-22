@@ -1,4 +1,4 @@
-package org.aim.movie.movie;
+package org.aim.movie;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

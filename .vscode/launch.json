@@ -29,6 +29,16 @@
             "mainClass": "org.aim.movie.movie.MovieApplication",
             "projectName": "backend",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MovieApplication<backend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "org.aim.movie.MovieApplication",
+            "projectName": "backend",
+            "args": ""
         }
     ]
 }
