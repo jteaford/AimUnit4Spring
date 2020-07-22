@@ -9,6 +9,16 @@
             "mainClass": "org.aim.movie.MovieApplication",
             "projectName": "movie",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MovieApplication<movie>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "org.aim.movie.movie.MovieApplication",
+            "projectName": "movie",
+            "args": ""
         }
     ]
 }

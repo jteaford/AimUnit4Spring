@@ -2,6 +2,8 @@ package org.aim.movie.movie;
 
 import java.util.Optional;
 
+import javax.annotation.Generated;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -56,4 +58,6 @@ public class MovieController {
         movieRepository.deleteById(id);
         return "Deleted";
     }
-}
+
+
+    }

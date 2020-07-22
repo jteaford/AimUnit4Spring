@@ -7,7 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.aim.movie.actor.Actor;
+import org.aim.movie.director.Director;
+import org.aim.movie.genre.Genre;
+import org.rating.Rating;
+
+import java.util.List;
 
 @Entity
 @Table(name = "movies")
@@ -25,25 +36,29 @@ public class Movie {
 
     private Date releaseDate;
 
+    // Director Id
+    @ManyToOne
+    @JoinColumn(name = "director_id", nullable = false)
+    private Director director;
+
+    // Genre Id
+    @ManyToOne
+    @JoinColumn(name = "genre_id", nullable = false)
+    private Genre genre;
+
+    // Rating Id
+    @ManyToOne
+    @JoinColumn(name = "rating_id", nullable = false)
+    private Rating rating;
+
+    // Actors
+    @ManyToMany
+    @JoinTable(name = "movie_actors", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "actor_id"))
+    private List<Actor> actors;
+
     public Integer getId() {
         return id;
     }
-
-    // Director Id
-    @Column(name = "director_id")
-    private int directorId;
-
-    // Genre Id
-    @Column(name = "genre_id")
-    private int genreId;
-
-    // Rating Id
-    @Column(name = "rating_id")
-    private int ratingId;
-
-    // Actors
-    @Column(name = "actors_name")
-    private String actors;
 
     public void setId(Integer id) {
         this.id = id;
@@ -73,37 +88,36 @@ public class Movie {
         this.releaseDate = releaseDate;
     }
 
-    public int getDirectorId() {
-        return directorId;
+    public Director getDirector() {
+        return director;
     }
 
-    public void setDirectorId(int directorId) {
-        this.directorId = directorId;
+    public void setDirector(Director director) {
+        this.director = director;
     }
 
-    public int getGenreId() {
-        return genreId;
+    public Genre getGenre() {
+        return genre;
     }
 
-    public void setGenreId(int genreId) {
-        this.genreId = genreId;
+    public void setGenre(Genre genre) {
+        this.genre = genre;
     }
 
-    public int getRatingId() {
-        return ratingId;
+    public Rating getRating() {
+        return rating;
     }
 
-    public void setRatingId(int ratingId) {
-        this.ratingId = ratingId;
+    public void setRating(Rating rating) {
+        this.rating = rating;
     }
 
-    public String getActors() {
+    public List<Actor> getActors() {
         return actors;
     }
 
-    public void setActors(String actors) {
+    public void setActors(List<Actor> actors) {
         this.actors = actors;
     }
-
     
 }

@@ -39,6 +39,7 @@ public class DirectorController {
             nsee.printStackTrace();
         }
         
+        return null;
     }
 
     @PostMapping(path = "/")
