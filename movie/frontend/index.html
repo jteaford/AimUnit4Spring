@@ -27,14 +27,28 @@
                             function (response) {
                                 console.log('getAllActors() response=', response);
                                 // get the location of our tbody
-                                const tbody = document.querySelector("#actor tbody");
+                                const tbody = document.querySelector("#actors tbody");
 
                                 //then we are going to loop through all elements in response
+                                response.data.forEach((element) => {
+                                    console.log('getAllActors() element', element);
+                                    // {id: 1, firstName: "Sam", lastName: "Worthington", dateOfBirth: 207792000000}
 
+                                    //then we are going to create some html
+                                    let row = `
+                                        <tr>
+                                            <td>${element.id}</td>
+                                            <td>${element.firstName}</td>
+                                            <td>${element.lastName}</td>
+                                            <td>${element.dateOfBirth}</td>
+                                        </tr>
+                                    `;
 
-                                //then we are going to create some html
+                                    //then we are going to insert our html into the tbody
+                                    tbody.insertAdjacentHTML('beforeend', row);
+                                })
 
-                                //then we are going to insert our html into the tbody
+                                
                             }
                         )
                         .catch(
