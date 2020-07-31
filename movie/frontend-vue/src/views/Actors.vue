@@ -1,8 +1,32 @@
 <template>
-  <div>
-    {{actors}}
+  <div id="main">
+    <div class="header">
+      <h1 class="title">Actors</h1>
+    </div>
+
+    <div class="content">
+
+      <table id="actors" class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Date of Birth</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr v-for="actor in actors" :key="actor.id">
+              <td>{{ actor.id }}</td>
+              <td>{{ actor.firstName }} {{ actor.lastName }}</td>
+              <td>{{ actor.dateOfBirth }}</td>
+            </tr>
+          </tbody>
+      </table>
+
+      </div>
   </div>
 </template>
+
 
 <script>
 export default {
@@ -17,3 +41,4 @@ export default {
             this.actors = data;
         },
 }
+</script>
