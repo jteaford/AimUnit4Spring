@@ -4,6 +4,8 @@
       <h1 class="title">Actors</h1>
     </div>
 
+    <router-link to="/actor" tag="button" class="button is-primary">Add Actor</router-link>
+
     <div class="content">
 
       <table id="actors" class="table">
@@ -20,10 +22,9 @@
               <td>{{ actor.firstName }} {{ actor.lastName }}</td>
               <td>{{ actor.dateOfBirth }}</td>
             </tr>
-          </tbody>
+        </tbody>
       </table>
-
-      </div>
+    </div>
   </div>
 </template>
 
@@ -42,3 +43,9 @@ export default {
         },
 }
 </script>
+
+<style scoped>
+  button {
+    float: right;
+  }
+</style>

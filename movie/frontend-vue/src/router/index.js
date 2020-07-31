@@ -10,6 +10,13 @@ Vue.use(VueRouter)
     name: 'Home',
     component: Home
   },
+
+  {
+    path: '/actor',
+    name: 'Actor',
+    component: () => import('../views/AddActor.vue')
+  },
+
   {
     path: '/actors',
     name: 'Actors',
