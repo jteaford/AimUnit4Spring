@@ -8,7 +8,7 @@
 
     <div class="content">
 
-      <table id="movie" class="table">
+      <table id="movies" class="table">
         <thead>
           <tr>
             <th>#</th>

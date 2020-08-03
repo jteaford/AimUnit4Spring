@@ -5,21 +5,21 @@
         <div class="field"> 
             <label class="label">Movie Title</label>
             <div class="control">
-                <input class="input" type="text" v-model="actor.movieTitle" placeholder="Movie Title" />
+                <input class="input" type="text" v-model="movie.movieTitle" placeholder="Movie Title" />
             </div> 
         </div>
 
         <div class="field"> 
             <label class="label">Movie Length</label>
             <div class="control">
-                <input class="input" type="text" v-model="actor.movieLength" placeholder="Movie Length" />
+                <input class="input" type="text" v-model="movie.movieLength" placeholder="Movie Length" />
             </div> 
         </div>
 
         <div class="field"> 
             <label class="label">Release Date</label>
             <div class="control">
-                <input class="input" type="text" v-model="actor.releaseDate" placeholder="Release Date" />
+                <input class="input" type="text" v-model="movie.releaseDate" placeholder="Release Date" />
             </div> 
         </div>
    
