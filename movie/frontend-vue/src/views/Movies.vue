@@ -18,7 +18,7 @@
           </tr>
         </thead>
         <tbody>
-            <tr v-for="movie in movie" :key="movie.id">
+            <tr v-for="movie in movies" :key="movie.id">
               <td>{{ movie.id }}</td>
               <td>{{ movie.movieTitle}}</td>
               <td>{{ movie.movieLength }}</td>
@@ -29,3 +29,24 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+    name: 'Movies',
+    data: () => ({ 
+      movies: [] 
+    }),
+        async mounted() {
+            console.log('movie mounted begin');
+            const { data } = await this.$http.get('http://localhost:8080/api/movies');
+            console.log('movie mounted data', data);
+            this.actors = data;
+        },
+}
+</script>
+
+<style scoped>
+  button {
+    float: right;
+  }
+</style>
