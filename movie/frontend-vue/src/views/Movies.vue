@@ -4,7 +4,7 @@
       <h1 class="title">Movies</h1>
     </div>
 
-    <router-link to="/movie" tag="button" class="button is-primary">Add Movie</router-link>
+    <router-link to="/movies" tag="button" class="button is-primary">Add Movie</router-link>
 
     <div class="content">
 
@@ -12,8 +12,9 @@
         <thead>
           <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Date of Birth</th>
+            <th>Movie Title</th>
+            <th>Movie Length</th>
+            <th>Release Date</th>
           </tr>
         </thead>
         <tbody>
