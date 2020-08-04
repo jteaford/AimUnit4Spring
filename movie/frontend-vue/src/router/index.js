@@ -27,12 +27,15 @@ Vue.use(VueRouter)
   },
 
   {
+    path: '/movie',
+    name: 'Movie',
+    component: () => import('../views/Movies.vue')
+  },
+
+  {
     path: '/movies',
     name: 'Movies',
-    // route level code-splitting
-    // this generates a separate chunk (movie.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "movie" */ '../views/Movies.vue')
+    component: () => import('../views/AddMovie.vue')
   }
 ]
 
