@@ -4,7 +4,7 @@
       <h1 class="title">Movies</h1>
     </div>
 
-    <router-link to="/api/movie" tag="button" class="button is-primary">Add Movie</router-link>
+    <router-link to="/movie" tag="button" class="button is-primary">Add Movie</router-link>
 
     <div class="content">
 
@@ -40,7 +40,7 @@ export default {
             console.log('movie mounted begin');
             const { data } = await this.$http.get('http://localhost:8080/api/movie');
             console.log('movie mounted data', data);
-            this.actors = data;
+            this.movies = data;
         },
 }
 </script>

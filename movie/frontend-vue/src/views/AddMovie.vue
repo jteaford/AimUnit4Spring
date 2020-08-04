@@ -47,13 +47,13 @@ export default {
 
     methods: {
         cancel() {
-            this.$router.push({path: '/api/movie'});
+            this.$router.push({path: '/movie'});
         },
         async save() {
             const response = await this.$http.post('http://localhost:8080/api/movie', this.movie)
             console.log(response);
             if (response.status === 200) {
-                this.$router.push({path: '/api/movie'});
+                this.$router.push({path: '/movie'});
             }
         }
     }

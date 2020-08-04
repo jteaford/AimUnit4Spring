@@ -1,5 +1,7 @@
 package org.aim.movie.director;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +23,7 @@ public class Director {
 
     private String lastName;
 
-    private Integer dateOfBirth;
+    private Date dateOfBirth;
 
 	public Integer getId() {
 		return id;
@@ -47,11 +49,11 @@ public class Director {
 		this.lastName = lastName;
 	}
 
-	public Integer getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(Integer dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
