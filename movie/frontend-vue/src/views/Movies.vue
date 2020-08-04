@@ -34,7 +34,7 @@
 export default {
     name: 'Movies',
     data: () => ({ 
-      actors: [] 
+      movie: [] 
     }),
         async mounted() {
             console.log('movies mounted begin');
