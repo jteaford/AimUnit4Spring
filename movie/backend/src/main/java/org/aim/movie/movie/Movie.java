@@ -13,6 +13,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import org.aim.movie.actor.Actor;
 import org.aim.movie.director.Director;
 import org.aim.movie.genre.Genre;
@@ -34,7 +36,11 @@ public class Movie {
 
     private int movieLength;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Date releaseDate;
+
+    @Column(name = "trailer_url")
+    private String trailerUrl;
 
     // Director Id
     @ManyToOne
@@ -118,6 +124,14 @@ public class Movie {
 
     public void setRating(Rating rating) {
         this.rating = rating;
+    }
+
+    public String getTrailerUrl() {
+        return trailerUrl;
+    }
+
+    public void setTrailerUrl(String trailerUrl) {
+        this.trailerUrl = trailerUrl;
     }
     
 }
