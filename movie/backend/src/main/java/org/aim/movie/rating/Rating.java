@@ -18,6 +18,7 @@ public class Rating {
 
     private String rating;
 
+    @Column(name = "rating_desc")
     private String description;
 
     public Integer getId() {

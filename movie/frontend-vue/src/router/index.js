@@ -5,11 +5,7 @@ import Home from '../views/Home.vue'
 Vue.use(VueRouter)
 
   const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
+  {path: '/', name: 'Home', component: Home},
 
   {
     path: '/actor',
@@ -17,26 +13,15 @@ Vue.use(VueRouter)
     component: () => import('../views/AddActor.vue')
   },
 
-  {
-    path: '/actors',
+  { path: '/actors',
     name: 'Actors',
     // route level code-splitting
     // this generates a separate chunk (actors.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "actors" */ '../views/Actors.vue')
-  },
+    component: () => import(/* webpackChunkName: "actors" */ '../views/Actors.vue')},
 
-  {
-    path: '/movies',
-    name: 'Movies',
-    component: () => import('../views/Movies.vue')
-  },
-
-  {
-    path: '/movie',
-    name: 'Movie',
-    component: () => import('../views/AddMovie.vue')
-  }
+  {path: '/movies', name: 'Movies', component: () => import('../views/Movies.vue')},
+  {path: '/movie/:id', name: 'Movie', component: () => import('../views/Movie.vue')}
 ]
 
 const router = new VueRouter({

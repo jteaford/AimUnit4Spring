@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping(path = "/api/movie")
+@RequestMapping(path = "/api/movies")
 
 public class MovieController {
     

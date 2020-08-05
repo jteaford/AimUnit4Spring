@@ -8,7 +8,8 @@
 
     <div class="content">
 
-      <table id="movies" class="table">
+      <table class="table">
+        
         <thead>
           <tr>
             <th>#</th>
@@ -17,14 +18,16 @@
             <th>Release Date</th>
           </tr>
         </thead>
+
         <tbody>
             <tr v-for="movie in movies" :key="movie.id">
               <td>{{ movie.id }}</td>
-              <td>{{ movie.movieTitle }}</td>
+              <td><a @click="movieDetail(movie.id)">{{ movie.movieTitle }}</a></td>
               <td>{{ movie.movieLength }}</td>
               <td>{{ movie.releaseDate }}</td>
             </tr>
         </tbody>
+
       </table>
     </div>
   </div>
@@ -37,9 +40,14 @@ export default {
     data: () => ({ 
       movies: [] 
     }),
+    methods: {
+      movieDetail(movieId) {
+          this.$router.push('movie/' + movieId);
+      }
+    },
         async mounted() {
             console.log('movies mounted begin');
-            const { data } = await this.$http.get('http://localhost:8080/api/movie');
+            const { data } = await this.$http.get('http://localhost:8080/api/movies');
             console.log('movies mounted data', data);
             this.movies = data;
         },
