@@ -27,14 +27,14 @@ Vue.use(VueRouter)
   },
 
   {
-    path: '/movie',
-    name: 'Movie',
+    path: '/movies',
+    name: 'Movies',
     component: () => import('../views/Movies.vue')
   },
 
   {
-    path: '/movies',
-    name: 'Movies',
+    path: '/movie',
+    name: 'Movie',
     component: () => import('../views/AddMovie.vue')
   }
 ]

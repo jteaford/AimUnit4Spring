@@ -4,7 +4,7 @@
       <h1 class="title">Movies</h1>
     </div>
 
-    <router-link to="/movies" tag="button" class="button is-primary">Add Movie</router-link>
+    <router-link to="/movie" tag="button" class="button is-primary">Add Movie</router-link>
 
     <div class="content">
 
@@ -35,7 +35,7 @@
 export default {
     name: 'Movies',
     data: () => ({ 
-      movie: [] 
+      movies: [] 
     }),
         async mounted() {
             console.log('movies mounted begin');
@@ -49,5 +49,9 @@ export default {
 <style scoped>
   button {
     float: right;
+  }
+
+  .content table th:not([align]) {
+    text-align: left;
   }
 </style>
