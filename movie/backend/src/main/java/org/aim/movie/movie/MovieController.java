@@ -32,12 +32,6 @@ public class MovieController {
         return movie.get();
     }
 
-    @PostMapping(path = "/")
-    public @ResponseBody String createActor(@RequestBody Movie movie) {
-        movieRepository.save(movie);
-        return "Saved";
-    }
-
     @PutMapping(path = "/{id}")
     public @ResponseBody String updateMovie(@PathVariable(value = "id") Integer id, @RequestBody Movie movieDetails) {
         Optional<Movie> optionalMovie = movieRepository.findById(id);

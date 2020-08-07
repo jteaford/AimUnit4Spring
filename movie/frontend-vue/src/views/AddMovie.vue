@@ -22,6 +22,18 @@
                 <input class="input" type="text" v-model="movie.releaseDate" placeholder="Release Date" />
             </div> 
         </div>
+
+        <select v-model="movie.director.id">
+            <option v-for="director in directors" :value="director.id" :key="director.id">
+                {{ director.firstName }} {{ director.lastName }}
+            </option>
+        </select>
+
+        <!-- <select v-model="movie.genre.id">
+            <option v-for="genre in genres" :value="genre.id" :key="genre.id">
+                {{ genre.firstName }} {{ genre.lastName }}
+            </option>
+        </select> -->
    
         <div class="field is-grouped">
             <p class="control">
@@ -36,14 +48,19 @@
 
 <script>
 export default {
-    name: 'AddMovie',
     data: () => ({
         movie: {
-            movieTitle: "",
-            movieLength: "",
-            releaseDate: ""
-        }
+            director: {}
+        },
+        directors: [],
+        genres: []
     }),
+
+    async mounted() {
+        const { data } = await this.$http.get('http://localhost:8080/api/directors');
+        console.log('getDirectors() directors', data)
+        this.directors = data;
+    },
 
     methods: {
         cancel() {
